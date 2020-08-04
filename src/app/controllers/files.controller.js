@@ -11,10 +11,13 @@ class FilesController {
     }
   }
 
+  
   async upload(req, res) {
     try {
-      const { path } = req.file;
+      const { file, io } = req;
+      const { path } = file;
       const upload = await filesServices.Upload(path);
+      io.emit("newFile", upload);
       return res.send(upload);
     } catch (ex) {
       console.error("Error on upload file", ex);

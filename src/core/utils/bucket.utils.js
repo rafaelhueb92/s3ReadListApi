@@ -1,7 +1,7 @@
 require("dotenv/config");
 const AWS = require("aws-sdk");
-const region = process.env.REGION;
-const Bucket = process.env.BUCKET;
+const region = process.env.REGION || "sa-east-1";
+const Bucket = process.env.BUCKET || "s3tosqshueb";
 const file = require("./file.utils");
 
 AWS.config.update({ region });
