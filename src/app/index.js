@@ -14,11 +14,9 @@ class App {
   }
 
   middlewares() {
-    this.io.on("connection", (socket) => {
-      console.log(socket);
-    });
-
     this.app.use(require("helmet")());
+    this.app.use(require("cors")());
+    
     this.app.use(express.json());
     this.app.use((req, res, next) => {
       req.io = this.io;
