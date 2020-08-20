@@ -4,7 +4,7 @@ class FilesController {
   async list(_, res) {
     try {
       const files = await filesServices.list();
-      return res.send({ files });
+      return res.send({ version:"1.1",files });
     } catch (ex) {
       console.error("Error on list", ex);
       return res.status(501).send("Error on list");
