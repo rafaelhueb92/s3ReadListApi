@@ -27,7 +27,7 @@ class App {
 
   routes() {
     this.app.post(
-      "/",cors(),
+      "/",
       express.static(path.resolve(__dirname, "..", "uploads"))
     );
     this.app.use(require("./routes/files.routes"));
