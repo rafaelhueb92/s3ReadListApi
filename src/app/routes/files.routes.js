@@ -8,6 +8,6 @@ const uploadConfigs = require("../../core/utils/multer.utils");
 const upload = multer(uploadConfigs);
 
 routes.get("/", fileController.list);
-routes.post("/",upload.single("file"), filesController.upload);
+routes.post("/", upload.single("file"), filesController.upload);
 
 module.exports = routes;

@@ -1,6 +1,5 @@
 const express = require("express");
 const path = require("path");
-const cors = require("cors");
 
 class App {
   constructor() {
@@ -16,7 +15,7 @@ class App {
 
   middlewares() {
     this.app.use(require("helmet")());
-    this.app.use(cors());
+    this.app.use(require("cors")());
     
     this.app.use(express.json());
     this.app.use((req, res, next) => {
